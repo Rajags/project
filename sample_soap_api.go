@@ -172,7 +172,7 @@ type BrinkWebServiceRes struct {
 
 func main() {
 
-  url := "***********************************************" // api url need add here
+  url := "https://api-devapi01.brinkpos.net/Settings.svc?WSDL"
   method := "GET"
 
   client := &http.Client {
@@ -182,8 +182,8 @@ func main() {
   if err != nil {
     fmt.Println(err)
   }
-  req.Header.Add("locationToken", "**************************") // locationToken need to add here
-  req.Header.Add("accessToken", "**************************") // accessToken need to add here
+  req.Header.Add("locationToken", "FST3N0QLaE6EEcNert6dsg==")
+  req.Header.Add("accessToken", "FrCbS73z00G349ZKpZy00g==")
 
   res, err := client.Do(req)
   defer res.Body.Close()
@@ -195,15 +195,15 @@ func main() {
 
   // soap API response 
  
- fmt.Println("soapWebServiceRes.Service.Text ",soapWebServiceRes.Service.Text)
- fmt.Println("soapWebServiceRes.Service.Name",soapWebServiceRes.Service.Name)
+ fmt.Println("soapWebServiceRes.Service.Text : ",soapWebServiceRes.Service.Text)
+ fmt.Println("soapWebServiceRes.Service.Name : ",soapWebServiceRes.Service.Name)
 
- fmt.Println("soapWebServiceRes.Service.Port.Text ",soapWebServiceRes.Service.Port.Text)
+ fmt.Println("soapWebServiceRes.Service.Port.Text :",soapWebServiceRes.Service.Port.Text)
 
- fmt.Println("soapWebServiceRes.Service.Port.Name ",soapWebServiceRes.Service.Port.Name)
- fmt.Println("soapWebServiceRes.Service.Port.Binding ", soapWebServiceRes.Service.Port.Binding)
- fmt.Println("soapWebServiceRes.Service.Port.Address.Text ",soapWebServiceRes.Service.Port.Address.Text)
- fmt.Println("soapWebServiceRes.Service.Port.Address.Location ",soapWebServiceRes.Service.Port.Address.Location)
+ fmt.Println("soapWebServiceRes.Service.Port.Name : ",soapWebServiceRes.Service.Port.Name)
+ fmt.Println("soapWebServiceRes.Service.Port.Binding :", soapWebServiceRes.Service.Port.Binding)
+ fmt.Println("soapWebServiceRes.Service.Port.Address.Text :",soapWebServiceRes.Service.Port.Address.Text)
+ fmt.Println("soapWebServiceRes.Service.Port.Address.Location :",soapWebServiceRes.Service.Port.Address.Location)
 
 }
 
