@@ -13,6 +13,8 @@ func main() {
 }
 
 func SortOrderNumber(numbers []int){
+		fmt.Println("SortOrderNumber inside ",numbers)
+
 	for i :=1;i<len(numbers);i++{
 	   if numbers[i]<numbers[i-1]{
 	   numbers[i] = numbers[i] + numbers[i-1]
